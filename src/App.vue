@@ -1,24 +1,19 @@
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/svg/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-  </header>
-
-  <RouterView />
+  <TheSpinner v-if="loading" />
+  <RouterView v-else />
 </template>
 
-<script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
-import cardsStore from './stores/cards';
+<script setup>
+import { RouterView } from 'vue-router'
+import { ref } from "vue"
+import { getCards } from '@/rest/api'
+import TheSpinner from '@/components/TheSpinner.vue'
 
-cardsStore.cards
+let loading = ref(true)
+
+getCards().then(result => {
+  /* loading.value = false */
+  console.log(result)
+});
+
 </script>
