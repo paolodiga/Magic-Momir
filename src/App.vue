@@ -1,19 +1,25 @@
 <template>
-  <TheSpinner v-if="loading" />
+  <div style="width: 80px; height: 80px;" v-if="loading">
+    <TheSpinner />
+  </div>
   <RouterView v-else />
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { RouterView } from 'vue-router'
-import { ref } from "vue"
-import { getCards } from '@/rest/api'
-import TheSpinner from '@/components/TheSpinner.vue'
+import { ref, watch } from "vue"
+import useCardStore from './stores/cardStore'
+import TheSpinner from './components/TheSpinner.vue'
 
 let loading = ref(true)
+const cardStore = useCardStore()
 
-getCards().then(result => {
-  /* loading.value = false */
-  console.log(result)
-});
+// cardStore.getCreatures()
+cardStore.getLands()
 
+
+watch(() => cardStore.cards, () => {
+  console.log(cardStore.cards)
+  loading.value = false
+}, {deep: true})
 </script>

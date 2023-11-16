@@ -1,8 +1,8 @@
 <template>
-  <div class="lds-ring">
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
+  <div class="spinner-container">
+    <div class="spinner"></div>
   </div>
 </template>
+
+<script setup lang="ts">
+</script>

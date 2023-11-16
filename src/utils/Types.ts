@@ -1,0 +1,121 @@
+import { LegalStatus, Keywords } from "./Enums"
+
+export type Card = {
+  artist: string,
+  artist_ids: string[],
+  booster: boolean,
+  border_color: string,
+  card_back_id: string,
+  cmc: number,
+  collector_number: string,
+  color_identity: string[],
+  colors: string[],
+  digital: boolean,
+  edhrec_rank: number,
+  finishes: string[],
+  flavor_text: string,
+  foil: boolean,
+  frame: string,
+  full_art: boolean,
+  games: string[],
+  highres_image: boolean,
+  id: string,
+  illustration_id: string,
+  image_status: string,
+  image_uris: {
+    art_crop: string,
+    border_crop: string,
+    large: string,
+    normal: string, // best
+    png: string,
+    small: string
+  },
+  keywords: Keywords[],
+  lang: string,
+  layout: string,
+  legalities: {
+    alchemy: LegalStatus,
+    brawl: LegalStatus,
+    commander: LegalStatus,
+    duel: LegalStatus,
+    explorer: LegalStatus,
+    future: LegalStatus,
+    gladiator: LegalStatus,
+    historic: LegalStatus,
+    historicbrawl: LegalStatus,
+    legacy: LegalStatus,
+    modern: LegalStatus,
+    oathbreaker: LegalStatus,
+    oldschool: LegalStatus,
+    pauper: LegalStatus,
+    paupercommander: LegalStatus,
+    penny: LegalStatus,
+    pioneer: LegalStatus,
+    predh: LegalStatus,
+    premodern: LegalStatus,
+    standard: LegalStatus,
+    vintage: LegalStatus,
+  }
+  mana_cost: string,
+  multiverse_ids: number[],
+  name: string,
+  nonfoil: boolean,
+  object: string,
+  oracle_id: string,
+  oracle_text: string,
+  oversized: boolean,
+  power: string,
+  printed_name: string,
+  printed_text: string,
+  printed_type_line: string,
+  prints_search_uri: string,
+  promo: boolean,
+  rarity: string,
+  related_uris: {
+    edhrec: string,
+    gatherer: string,
+    tcgplayer_infinite_articles: string,
+    tcgplayer_infinite_decks: string,
+  },
+  released_at: string,
+  reprint: boolean,
+  reserved: boolean,
+  rulings_uri: string,
+  scryfall_set_uri: string,
+  scryfall_uri: string,
+  set: string,
+  set_id: string,
+  set_name: string,
+  set_search_uri: string,
+  set_type: string,
+  set_uri: string,
+  story_spotlight: boolean,
+  textless: boolean,
+  toughness: string,
+  type_line: string,
+  uri: string,
+  variation: boolean,
+}
+
+export type Creatures = {
+  cmc1?: Card[]
+  cmc2?: Card[]
+  cmc3?: Card[]
+  cmc4?: Card[]
+  cmc5?: Card[]
+  cmc6?: Card[]
+  cmc7?: Card[]
+  cmc8?: Card[]
+  cmc9?: Card[]
+  cmc10?: Card[]
+  cmc11?: Card[]
+  cmc12?: Card[]
+  cmc13?: Card[]
+  cmc14?: Card[]
+  cmc15?: Card[]
+  cmc16?: Card[]
+  cmc17?: Card[]
+  cmc18?: Card[]
+  cmc19?: Card[]
+  cmc20?: Card[]
+}
