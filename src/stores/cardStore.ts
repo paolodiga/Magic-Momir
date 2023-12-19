@@ -33,7 +33,8 @@ const useCardStore = defineStore('card', {
         .then((resp: Card[]): void => {
           console.clear()
           resp.forEach(land => {
-            window.open(land.image_uris.normal)
+            // window.open(land.image_uris.normal)
+            console.log(land)
           })
         })
         .catch(() => this.getLands())
